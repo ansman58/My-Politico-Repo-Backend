@@ -1,4 +1,3 @@
-// const { Router } = require('express')
 const addParty = require('../controllers/party/addParty');
 const getParty = require('../controllers/party/getParty');
 const getAllParties = require('../controllers/party/getAllParties');

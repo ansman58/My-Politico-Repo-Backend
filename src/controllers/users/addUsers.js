@@ -4,19 +4,17 @@ const bcrypt = require("bcrypt")
 const fs = require('fs')
 const generateToken = require("../../utils/generateToken")
 
+//const mongoose = require('mongoose')
+
+// const userSchema = new mongoose.Schema()
+
+// const model = mongoose.model('User', userSchema)
+
+// module.exports = model
+
 const addUsers = async (req, res) => {
   const { firstname, lastname, othername, email, phoneNumber, role, password } = req.body;
   const file = req.file;
-
-  // return res.json({
-  //   firstname,
-  //   lastname,
-  //   othername,
-  //   email,
-  //   phoneNumber,
-  //   role,
-  //   file,
-  // });
 
   const check = users.find((user) => user.email === email);
 

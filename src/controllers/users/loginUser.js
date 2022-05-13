@@ -1,5 +1,5 @@
 const { users } = require("../../database");
-const cloudinary = require("../../config/cloudinary");
+// const cloudinary = require("../../config/cloudinary");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const generateToken = require("../../utils/generateToken");

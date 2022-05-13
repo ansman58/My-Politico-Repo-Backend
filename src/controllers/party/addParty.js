@@ -1,6 +1,6 @@
 const { party } = require("../../database");
 const cloudinary = require("../../config/cloudinary");
-const fs = require('fs');;
+const fs = require('fs');
 
 const addParty = async (req, res) => {
     const {name, hqAddress} = req.body;
@@ -65,7 +65,7 @@ const addParty = async (req, res) => {
     )
   
     const newData = {
-      id: party.length,
+      id: party.length + 1,
       name,
       hqAddress,    
       logoURL,

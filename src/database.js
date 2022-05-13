@@ -6,12 +6,13 @@ const users = [
     firstname: "Anslem",
     lastname: "Nnakwe",
     othername: "",
-    email: "ee",
+    email: "java@gmail.com",
     phoneNumber: "868576576",
     passportUrl: "../images/politician1.jpg",
     isAdmin: true,
     role: "user",
-    password: bcrypt.hashSync('123456', 12)
+    password: bcrypt.hashSync('123456', 12),
+    // confirmPassword: bcrypt.hashSync('123456', 12)
   },
   {
     id: 2,
@@ -35,6 +36,8 @@ const users = [
     passportUrl: "../images/politician1.jpg",
     isAdmin: false,
     role: "politician",
+    password: bcrypt.hashSync('123456', 12),
+    confirmPassword: bcrypt.hashSync('123456', 12)
   },
   {
     id: 3,
@@ -46,6 +49,8 @@ const users = [
     passportUrl: "../images/politician1.jpg",
     isAdmin: false,
     role: "user",
+    password: bcrypt.hashSync('123456', 12),
+    confirmPassword: bcrypt.hashSync('123456', 12)
   },
 ];
 
@@ -73,9 +78,16 @@ const party = [
     logoURL:
       "https://www.inecnigeria.org/wp-content/uploads/2019/02/APC-Constitution.pdf",
   },
-
   {
     id: 4,
+    name: "KOWA",
+    hqAddress: "Asaba",
+    logoURL:
+      "https://www.inecnigeria.org/wp-content/uploads/2019/02/APC-Constitution.pdf",
+  },
+
+  {
+    id: 5,
     name: "APGA",
     hqAddress: "Abuja",
     logoURL:
@@ -115,8 +127,56 @@ const offices = [
     name: "Deputy Governor",
   }
 ];
-const candidates = [];
-const vote = [];
+
+const candidates = [
+  {
+    id: 1,
+    office: 2,
+    party: 4,
+    candidate: 2,
+  },
+  {
+    id: 2,
+    office: 4,
+    party: 4,
+    candidate: 2,
+  },
+  {
+    id: 3,
+    office: 2,
+    party: 2,
+    candidate: 4,
+  },
+  {
+    id: 4,
+    office: 3,
+    party: 2,
+    candidate: 4,
+  },
+  {
+    id: 5,
+    office: 3,
+    party: 2,
+    candidate: 4,
+  },
+  {
+    id: 6,
+    office: 3,
+    party: 2,
+    candidate: 4,
+  },
+];
+
+
+const vote = [
+  {
+    id: 1,
+    createdOn: new Date("2022/04/01"),
+    createdBy: 1,
+    office: 1,
+    candidate: 2,
+  },
+];
 const petition = [];
 
 module.exports = { users, party, offices, candidates, vote, petition };

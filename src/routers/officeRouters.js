@@ -10,7 +10,7 @@ const isAdmin = require("../utils/isAdmin");
 const Router = express.Router;
 const officeRouter = Router();
 
-officeRouter.post('/add', addOffice)
+officeRouter.post('/add', isAdmin, addOffice)
 officeRouter.get("/get/:id", getOffice);
 officeRouter.get('/', getAllOffice);
 officeRouter.delete("/delete/:id", isAdmin, deleteOffice);

@@ -1,7 +1,6 @@
 const {users} = require('../../database');
 
 const updateUsers = (req, res) => {
-    // const { firstname, lastname, othername, email, phoneNumber, role, password } = req.body;
     const userData = users.find(user => user.id === parseInt(req.params.id))
     if(!userData) {
         return res.status(400).json({

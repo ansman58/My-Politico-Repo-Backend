@@ -7,10 +7,16 @@ const userRouter = require('./routers/userRouters');
 const partyRouter = require('./routers/partyRouters');
 const isAuth = require("./utils/isAuth");
 const officeRouter = require('./routers/officeRouters');
+const candidateRouter = require('./routers/candidateRouter');
+const voteRouter = require('./routers/voteRouter');
 
-dotenv.config()
+// const mongoose = require('mongoose')
 
-const PORT = process.env.PORT || 4000;
+// mongoose.connect('mongodb://localhost/testdb')
+
+dotenv.config();
+
+const PORT = process.env.PORT || 3000;
 
 const upload = multer({ dest: "upload/" });
 
@@ -20,7 +26,11 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/users', upload.single('file'), userRouter);
 app.use('/party', upload.single('file'), isAuth, partyRouter);
-app.use('/office', isAuth, officeRouter)
+app.use('/office', isAuth, officeRouter);
+app.use('/candidate', isAuth, candidateRouter);
+app.use('/vote', voteRouter)
+
+app.get('/', (req, res)  => {res.send(`Hello There`)})
 
 
 
