@@ -18,7 +18,7 @@ const addUsers = async (req, res) => {
 
   const check = users.find((user) => user.email === email);
 
-  if (!firstname || !lastname || !email || check || !phoneNumber || !password || !role || !file || (file.size > 5242880) ) {
+  if (!firstname || !lastname || !email || check || !phoneNumber || !password || !role || !file || (file > 5242880)) {
     const error = {}
 
     if(!firstname) {
@@ -97,7 +97,7 @@ const addUsers = async (req, res) => {
     phoneNumber,
     role,
     password: newPassword,
-    passportUrl,
+    // passportUrl,
     isAdmin: false,
   };
 

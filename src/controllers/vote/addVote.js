@@ -1,54 +1,55 @@
-const {vote} = require('../../database')
-const {users} = require('../../database');
+const { vote } = require("../../database");
+const { users } = require("../../database");
 
 const addVote = (req, res) => {
-    const {office, candidate} = req.body;
+  const { office, candidate } = req.body;
 
-    const authUser = req.user
-    
-    const check = vote.find(element => (element.createdBy === authUser.id) && (element.office === office))
+  const authUser = req.user;
 
-    if(!office || !candidate) {
-        const error = {}
+  const check = vote.find(
+    (element) => element.createdBy === authUser.id && element.office === office
+  );
 
-        if(!office) {
-            error.office = `Choose an office`
-        }
+  if (!office || !candidate) {
+    const error = {};
 
-        if (!candidate) {
-            error.candidate = `Choose a candidate`
-        }
-
-        res.status(400).json({
-            status: 400,
-            error
-        })
-        return;
+    if (!office) {
+      error.office = `Choose an office`;
     }
 
-    if(check) {
-        res.status(400).json({
-            status: 400,
-            error: `Sorry, you can only vote for an office once`
-        })
-        return;
+    if (!candidate) {
+      error.candidate = `Choose a candidate`;
     }
 
-      const newVote = {
-            office, 
-            createdBy: authUser.id,
-            createdOn: new Date('2022/05/9'),
-            candidate,
-        }
+    res.status(400).json({
+      status: 400,
+      error,
+    });
+    return;
+  }
 
-    vote.push(newVote)
+  if (check) {
+    res.status(400).json({
+      status: 400,
+      error: `Sorry, you can only vote for an office once`,
+    });
+    return;
+  }
 
-    res.json({
-        status: 200,
-        data: newVote
-    })
+  const newVote = {
+    id: vote.length + 1,
+    office,
+    createdBy: authUser.id,
+    createdOn: new Date("2022/05/9"),
+    candidate,
+  };
 
-    
-}
+  vote.push(newVote);
 
-module.exports = addVote
+  res.json({
+    status: 200,
+    data: newVote,
+  });
+};
+
+module.exports = addVote;

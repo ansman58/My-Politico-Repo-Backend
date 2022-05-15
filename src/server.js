@@ -28,7 +28,7 @@ app.use('/users', upload.single('file'), userRouter);
 app.use('/party', upload.single('file'), isAuth, partyRouter);
 app.use('/office', isAuth, officeRouter);
 app.use('/candidate', isAuth, candidateRouter);
-app.use('/vote', voteRouter)
+app.use('/vote', isAuth, voteRouter)
 
 app.get('/', (req, res)  => {res.send(`Hello There`)})
 

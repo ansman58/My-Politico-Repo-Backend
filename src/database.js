@@ -16,22 +16,22 @@ const users = [
   },
   {
     id: 2,
-    firstname: "Anslem",
+    firstname: "Seun",
     lastname: "Nnakwe",
     othername: "",
-    email: "emaukjhhd",
+    email: "chuks@gmail.com",
     phoneNumber: "868576576",
     passportUrl: "../images/politician1.jpg",
     isAdmin: false,
-    role: "politician",
+    role: "user",
     password: bcrypt.hashSync('123456', 12)
   },
   {
     id: 4,
-    firstname: "Anslem",
-    lastname: "Nnakwe",
+    firstname: "Matthew",
+    lastname: "Godwin",
     othername: "",
-    email: "emaukjhhd",
+    email: "him@gmail.com",
     phoneNumber: "868576576",
     passportUrl: "../images/politician1.jpg",
     isAdmin: false,
@@ -44,10 +44,10 @@ const users = [
     firstname: "Anslem",
     lastname: "Nnakwe",
     othername: "",
-    email: "emaukjhhd",
+    email: "grace@gmail.com",
     phoneNumber: "868576576",
     passportUrl: "../images/politician1.jpg",
-    isAdmin: false,
+    isAdmin: true,
     role: "user",
     password: bcrypt.hashSync('123456', 12),
     confirmPassword: bcrypt.hashSync('123456', 12)
@@ -171,12 +171,11 @@ const candidates = [
 const vote = [
   {
     id: 1,
-    createdOn: new Date("2022/04/01"),
+    createdOn: new Date(),
     createdBy: 1,
     office: 1,
     candidate: 2,
   },
 ];
-const petition = [];
 
-module.exports = { users, party, offices, candidates, vote, petition };
+module.exports = { users, party, offices, candidates, vote};

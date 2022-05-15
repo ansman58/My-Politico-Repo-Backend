@@ -1,18 +1,18 @@
 const addVote = require("../controllers/vote/addVote");
-// const getCandidate = require("../controllers/candidate/getCandidate");
-// const getAllCandidates = require("../controllers/candidate/getAllCandidates");
-// const deleteCandidate = require("../controllers/candidate/deleteCandidate");
-// const updateCandidate = require("../controllers/candidate/updateCandidate");
+const getVoter = require("../controllers/vote/getVote");
+const getAllVotes = require("../controllers/vote/getAllVotes");
+
+
 
 const express = require("express");
-// const addVote = require("../controllers/vote/addVote.js");
+
 
 const Router = express.Router;
 const voteRouter = Router();
 
 voteRouter.post("/add", addVote);
-// candidateRouter.get("/get/:id", getCandidate);
-// candidateRouter.get('/', getAllCandidates);
+voteRouter.get("/get/:id", getVoter);
+voteRouter.get('/', getAllVotes);
 // candidateRouter.delete("/delete/:id", deleteCandidate);
 // candidateRouter.put("/update/:id", updateCandidate);
 
