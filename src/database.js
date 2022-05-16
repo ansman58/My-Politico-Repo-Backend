@@ -3,8 +3,8 @@ const bcrypt = require("bcrypt")
 const users = [
   {
     id: 1,
-    firstname: "Anslem",
-    lastname: "Nnakwe",
+    firstname: "John",
+    lastname: "Doe",
     othername: "",
     email: "java@gmail.com",
     phoneNumber: "868576576",
@@ -18,7 +18,7 @@ const users = [
     id: 2,
     firstname: "Seun",
     lastname: "Nnakwe",
-    othername: "",
+    othername: "Ashley",
     email: "chuks@gmail.com",
     phoneNumber: "868576576",
     passportUrl: "../images/politician1.jpg",
@@ -41,8 +41,8 @@ const users = [
   },
   {
     id: 3,
-    firstname: "Anslem",
-    lastname: "Nnakwe",
+    firstname: "Francis",
+    lastname: "Jennifer",
     othername: "",
     email: "grace@gmail.com",
     phoneNumber: "868576576",
@@ -144,7 +144,7 @@ const candidates = [
   {
     id: 3,
     office: 2,
-    party: 2,
+    party: 3,
     candidate: 4,
   },
   {
@@ -161,12 +161,11 @@ const candidates = [
   },
   {
     id: 6,
-    office: 3,
-    party: 2,
+    office: 2,
+    party: 4,
     candidate: 4,
   },
 ];
-
 
 const vote = [
   {
@@ -175,6 +174,20 @@ const vote = [
     createdBy: 1,
     office: 1,
     candidate: 2,
+  },
+  {
+    id: 2,
+    createdOn: new Date(),
+    createdBy: 2,
+    office: 4,
+    candidate: 2,
+  },
+  {
+    id: 3,
+    createdOn: new Date(),
+    createdBy: 3,
+    office: 3,
+    candidate: 1,
   },
 ];
 
