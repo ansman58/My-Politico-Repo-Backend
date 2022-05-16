@@ -40,7 +40,7 @@ const addVote = (req, res) => {
     id: vote.length + 1,
     office,
     createdBy: authUser.id,
-    createdOn: new Date("2022/05/9"),
+    createdOn: new Date(),
     candidate,
   };
 

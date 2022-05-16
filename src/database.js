@@ -6,7 +6,7 @@ const users = [
     firstname: "John",
     lastname: "Doe",
     othername: "",
-    email: "java@gmail.com",
+    email: "chris@gmail.com",
     phoneNumber: "868576576",
     passportUrl: "../images/politician1.jpg",
     isAdmin: true,
