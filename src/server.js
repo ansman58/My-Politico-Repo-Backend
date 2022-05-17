@@ -10,10 +10,6 @@ const officeRouter = require('./routers/officeRouters');
 const candidateRouter = require('./routers/candidateRouter');
 const voteRouter = require('./routers/voteRouter');
 
-// const mongoose = require('mongoose')
-
-// mongoose.connect('mongodb://localhost/testdb')
-
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;

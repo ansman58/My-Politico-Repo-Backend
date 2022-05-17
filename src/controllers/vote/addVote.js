@@ -14,6 +14,7 @@ const addVote = (req, res) => {
     const error = {};
 
     if (!office) {
+      
       error.office = `Choose an office`;
     }
 
@@ -38,10 +39,10 @@ const addVote = (req, res) => {
 
   const newVote = {
     id: vote.length + 1,
-    office,
+    office: parseInt(office),
     createdBy: authUser.id,
     createdOn: new Date(),
-    candidate,
+    candidate: parseInt(candidate)
   };
 
   vote.push(newVote);

@@ -37,7 +37,7 @@ const users = [
     isAdmin: false,
     role: "politician",
     password: bcrypt.hashSync('123456', 12),
-    confirmPassword: bcrypt.hashSync('123456', 12)
+    // confirmPassword: bcrypt.hashSync('123456', 12)
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ const users = [
     isAdmin: true,
     role: "user",
     password: bcrypt.hashSync('123456', 12),
-    confirmPassword: bcrypt.hashSync('123456', 12)
+    // confirmPassword: bcrypt.hashSync('123456', 12)
   },
 ];
 
