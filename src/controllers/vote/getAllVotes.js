@@ -1,15 +1,15 @@
 const { vote } = require("../../database");
 
-const getAllVotes = (req, res) => {
-  const {createdBy, office} = req.body;
 
-  const checkOut = vote.filter(
-    (element) => element.createdBy === req.user.id && element.office === office
-  );
+
+const getAllVotes = (req, res) => {
+
+  const checkOut = vote.map(element => element);
+
   if(checkOut){
     res.json({
       status: 200,
-      data,
+      data: vote
     });
   }
 
