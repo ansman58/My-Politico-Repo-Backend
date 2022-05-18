@@ -189,6 +189,13 @@ const vote = [
     office: 3,
     candidate: 1,
   },
+  {
+    id: 4,
+    createdOn: new Date(),
+    createdBy: 3,
+    office: 2,
+    candidate: 2,
+  },
 ];
 
 module.exports = { users, party, offices, candidates, vote};
